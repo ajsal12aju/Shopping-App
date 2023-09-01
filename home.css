@@ -85,7 +85,139 @@
 }
 
 #carousel img {
+    padding-top: 7%;
     width: 100%;
     height: 500px;
     object-fit: cover;
+}
+
+.dots {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #333;
+}
+
+
+#clothing-section {
+    display: flex;
+    justify-content: center;
+    
+
+}
+
+#accessories-section{
+    display: flex;
+    justify-content: center;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 5%;
+}
+
+.cloth-card {
+    width: 15%;
+    min-width: 200px;
+    height: auto;
+    margin: 30px 10px;
+    cursor: pointer;
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.card-img {
+    width: 100%;
+}
+
+.card-desc {
+    text-align: left;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: rgb(27, 25, 25);
+}
+
+.card-contant {
+    padding-left: 10px;
+    margin: 10px auto;
+}
+
+.card-brand {
+    margin-top: 10px;
+    text-align: left;
+    font-size: 15px;
+    font-weight: bolder;
+    color: rgb(110, 110, 110);
+}
+
+.card-price {
+    margin-top: 10px;
+    text-align: left;
+    font-size: 20px;
+    letter-spacing: 2px;
+    font-weight: bolder;
+    color: #009688;
+}
+
+@media only screen and (max-width: 600px) {
+    #clothing-section,
+    #accessories-section { 
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .cloth-card {
+        width: 50%;
+        box-sizing: border-box;
+        margin: 10px 0;
+    }
+}
+
+
+.section-heading {
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 50px;
+
+}
+
+
+footer {
+    background-color: black;
+    height: 180px;
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+footer ul li a, footer ul li {
+    text-decoration: none;
+    color: #b8b8b8;
+    font-size: 15px;
+    list-style: none;
+    padding: 3px;
+}
+footer ul li h3 {
+    text-decoration: none;
+    color: #dcdcdc;
+    font-size: 16px;
+    margin-bottom: 10px;
+    cursor: pointer;
 }

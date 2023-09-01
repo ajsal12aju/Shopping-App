@@ -1,0 +1,91 @@
+#header{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 2px 4px 2px rgba(17, 16, 16, 0.5);
+    padding: 15px 0;
+    min-height: 7vh;
+ 
+    position: fixed;
+    z-index: 50;
+    background-color: #fff;
+    align-items: center;
+}
+.logo a {
+    text-decoration: none;
+    color: black;
+}
+
+.logo a h4 {
+    font-size: 30px;
+    font-weight: 100;
+    letter-spacing: 3px;
+    cursor: pointer;
+}
+.logo a h4 span {
+    color: #009688;
+    letter-spacing: 1px;
+    font-weight: 1000;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    width: 30%;
+    padding-top: 8px;
+    
+}
+
+.nav-links li a {
+    text-decoration: none;
+    font-size: 17px;
+    color: rgb(27, 25, 25);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    transition: all 0.2s;
+}
+.icons{
+    display: flex;
+    color: rgb(27, 25, 25);
+}
+.icons i {
+    padding-top: 8px;
+    font-size: 22px;
+    cursor: pointer;
+    margin-right: 50px;
+}
+.icons .cart {
+    position: relative;
+}
+.icons .cart a {
+    color: rgb(27, 25, 25);
+}
+
+.icons .cart a span {
+    color: #fff;
+    background-color: #009688;
+    border-radius: 50%;
+    font-size: 14px;
+    padding: 5px 8px;
+    position: absolute;
+    top: 0;
+}
+.car {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+#carousel {
+    display: flex;
+    transition: transform 1s ease;
+}
+
+#carousel img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}

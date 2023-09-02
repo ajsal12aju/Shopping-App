@@ -14,7 +14,7 @@ headerpro.innerHTML = `
 <div class="icons">
 <i class="fa-solid fa-magnifying-glass"></i>
 <div class="cart">
-    <a href=""><i class="fa-solid fa-cart-shopping"> <span id="cart-count">0</span></i></a>
+    <a href="checkout.html"><i class="fa-solid fa-cart-shopping"> <span id="cart-count">0</span></i></a>
 </div>
 <i class="fa-solid fa-user"></i>
 </div>

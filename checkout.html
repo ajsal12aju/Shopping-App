@@ -3,11 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="checkout.css">
     <title>Document</title>
 </head>
 <body>
-    <div id="checkout">
-
+    <h1>welcome to checkout</h1>
+    <div id="cart-container">
+        <div class="left-side">
+           <p>
+            Total Items : 
+            <span id="number-of-items">0</span>
+           </p>
+           <div class="cart-items">
+            <div class="item">
+                <img src="https://assets.myntassets.com/h_1440,q_100,w_1080/…n-Black-Solid-Sporty-Jacket-371505387708496-1.jpg" alt="">
+                <div class="detail">
+                    <h3>men black</h3>
+                    <p>1</p>
+                    <p>amount</p>
+                </div>
+            </div>
+           </div>
+        </div>
+        <div class="right-side">
+            <div class="total-amount">
+            <h2>Total amount</h2>
+            <p>Total Amount :  <span> 0</span></p>
+            <a href=""><button id="place-order"> Place Order</button> </a>
+        </div>
+        </div>
     </div>
+
+    <script src="chekout.js"></script>
 </body>
 </html>

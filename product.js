@@ -6,7 +6,7 @@ headerpro.innerHTML = `
 </a>
 </div>
 <ul class="nav-links">
-<li><a href="">HOME</a></li>
+<li><a href="home.html">HOME</a></li>
 <li><a href="">CLOTHINGS</a></li>
 <li><a href="">ACCESSORIES</a></li>
 </ul>
@@ -22,16 +22,13 @@ headerpro.innerHTML = `
 
 `
 $(document).ready(function() {
- 
     var queryParams = new URLSearchParams(window.location.search);
     var productId = queryParams.get("id");
 
-   
     $.ajax({
         url: 'https://5d76bf96515d1a0014085cf9.mockapi.io/product/' + productId,
         type: 'GET',
         success: function(productData) {
-           
             displayProductDetails(productData);
         },
         error: function(error) {
@@ -41,7 +38,6 @@ $(document).ready(function() {
 });
 
 function displayProductDetails(productData) {
-    
     var container = document.getElementById("container");
 
     var leftChild = document.createElement("div");
@@ -84,10 +80,10 @@ function displayProductDetails(productData) {
         images.src = productData.photos[i];
 
         if (i === 0) {
-            images.classList.add("active-first"); 
+            images.classList.add("active-first");
         }
 
-        images.addEventListener("click", function() {
+        images.addEventListener("click", function () {
             var currentActive = document.querySelector(".images.active-first");
             if (currentActive) {
                 currentActive.classList.remove("active-first");
@@ -99,6 +95,12 @@ function displayProductDetails(productData) {
         imgdiv.appendChild(images);
     }
 
+    var addToCart = $('<button class="add-btn">Add To Cart</button>');
+    addToCart.attr("data-product-id", productData.id);
+    addToCart.attr("data-product-name", productData.name);
+    addToCart.attr("data-product-price", productData.price);
+    addToCart.attr("data-product-image", productData.preview);
+
     container.appendChild(rightChild);
     rightChild.appendChild(cardTitle);
     rightChild.appendChild(cardBrand);
@@ -107,12 +109,56 @@ function displayProductDetails(productData) {
     rightChild.appendChild(description);
     rightChild.appendChild(product);
     rightChild.appendChild(imgdiv);
+    
+    rightChild.append(addToCart[0]);
 
- 
-
+    addToCart.click(addToCartClicked);
 }
 
-   
+function addToCartClicked(event) {
+    var button = event.target;
+    var productId = button.dataset.productId;
+    var productName = button.dataset.productName;
+    var productPrice = button.dataset.productPrice;
+    var productImage = button.dataset.productImage;
 
+    addToCartLocalStorage(productId, productName, productPrice, productImage);
+    updateCartCount();
+}
+
+function addToCartLocalStorage(productId, name, price, image) {
+    var cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+    var existingItem = cartItems.find(item => item.productId === productId);
+
+    if (existingItem) {
+        existingItem.quantity++;
+    } else {
+        var newItem = {
+            productId: productId,
+            name: name,
+            price: price,
+            image: image,
+            quantity: 1
+        };
+        cartItems.push(newItem);
+    }
+
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+}
+
+function updateCartCount() {
+    var cartCountSpan = document.getElementById("cart-count");
+    var cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+    var count = cartItems.reduce((total, item) => total + item.quantity, 0);
+    cartCountSpan.textContent = count;
+}
+
+
+updateCartCount();
+
+
+var cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+console.log(cartItems)
 
 

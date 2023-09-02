@@ -149,6 +149,7 @@ function addToCartLocalStorage(productId, name, price, image) {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
 }
 
+
 function updateCartCount() {
     var cartCountSpan = document.getElementById("cart-count");
     var cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];

@@ -1,6 +1,7 @@
 var header = document.getElementById("header")
 var headerpro = document.getElementById("header-pro")
 var cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+var totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
 
 
 header.innerHTML = `
@@ -18,7 +19,7 @@ header.innerHTML = `
 <div class="icons">
 <i class="fa-solid fa-magnifying-glass"></i>
 <div class="cart">
-    <a href="checkout.html"><i class="fa-solid fa-cart-shopping"> <span id="cart-count">${cartItems.length}</span></i></a>
+    <a href="checkout.html"><i class="fa-solid fa-cart-shopping"> <span id="cart-count">${totalQuantity}</span></i></a>
 </div>
 <i class="fa-solid fa-user"></i>
 </div>

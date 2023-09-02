@@ -1,4 +1,6 @@
 var header = document.getElementById("header")
+var headerpro = document.getElementById("header-pro")
+
 
 header.innerHTML = `
 <div class="logo">
@@ -6,7 +8,6 @@ header.innerHTML = `
     <h4><span>SHOPE</span>LANE </h4>
 </a>
 </div>
-
 <ul class="nav-links">
 <li><a href="">HOME</a></li>
 <li><a href="">CLOTHINGS</a></li>
@@ -24,6 +25,9 @@ header.innerHTML = `
 
 
 `
+
+
+
 var banner = document.getElementsByClassName("banner")[0]; 
 banner.innerHTML = `
 <div class="car">
@@ -85,11 +89,18 @@ $(document).ready(function() {
         url: 'https://5d76bf96515d1a0014085cf9.mockapi.io/product',
         type: 'GET',
         success: function(response) {
-            // Loop through the API data and display product cards
+            
             for (var i = 0; i < response.length; i++) {
                 var product = response[i];
 
                 var cardElement = document.createElement("div");
+
+                cardElement.setAttribute("data-product-id", product.id); 
+
+                cardElement.onclick = function() {
+                    var productId = this.getAttribute("data-product-id");
+                    displayProductDetails(productId);
+                };
                 cardElement.className = "cloth-card";
                 var cardImage = document.createElement("img");
                 cardImage.className = "card-img";
@@ -109,10 +120,10 @@ $(document).ready(function() {
                 cardPrice.innerText = "Rs " + product.price;
 
                 if (product.isAccessory) {
-                    // Add to accessories section
+                  
                     document.getElementById("accessories-section").appendChild(cardElement);
                 } else {
-                    // Add to clothing section
+                   
                     document.getElementById("clothing-section").appendChild(cardElement);
                 }
 
@@ -128,3 +139,19 @@ $(document).ready(function() {
         }
     });
 });
+
+
+    
+
+    
+    
+   
+
+
+    
+   
+
+function displayProductDetails(productId) {
+    
+    window.location.href = "product.html?id=" + productId;
+}

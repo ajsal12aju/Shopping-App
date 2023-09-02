@@ -221,3 +221,72 @@ footer ul li h3 {
     margin-bottom: 10px;
     cursor: pointer;
 }
+
+#container{
+    margin:5% 9%;
+    display: flex;
+   
+    margin-left: 18%;
+}
+.left{
+    height: 660px;
+    width: 35%;
+    
+}
+.perant-img{
+    width:100%;
+  height: 630px;
+  
+
+}
+
+.right{
+    width: 50%;
+
+    height: 660px;
+    margin-left : 4%;
+}
+.title{
+    font-weight: 300;   
+    font-size: 44px;
+    letter-spacing: 1px;
+    margin-top: 0;
+}
+.right h4{
+    margin-top: 20px;
+    font-weight: 400;
+    font-size: 24px;
+    letter-spacing: 1px;
+    color: rgb(91, 88, 88);
+}
+.right h3{
+    margin-top: 10px;
+    font-weight: 400;
+    font-size: 22px;
+    letter-spacing: 1px;
+    color: #009688;
+}
+
+.description{
+    margin-top: 10px;
+    font-size: 19px;
+    font-weight: 300;
+    color: #86939e;
+}
+.imgdiv{
+    display: flex;
+
+}
+.images{
+    width: 120px;
+    height: 150px;
+    border-radius: 5px;
+    padding: 5px;
+    margin-right: 1.5%;
+}
+.images.active{
+    border: 3px solid #009688;
+}
+.active-first {
+    border: 3px solid #009688;
+}

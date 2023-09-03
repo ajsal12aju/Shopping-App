@@ -24,11 +24,7 @@ header.innerHTML = `
 <i class="fa-solid fa-user"></i>
 </div>
 </div>
-
-
 `
-
-
 
 var banner = document.getElementsByClassName("banner")[0]; 
 banner.innerHTML = `
@@ -143,16 +139,6 @@ $(document).ready(function() {
 });
 
 
-    
-
-    
-    
-   
-
-
-    
-   
-
 function displayProductDetails(productId) {
     
     window.location.href = "product.html?id=" + productId;
@@ -177,7 +163,6 @@ footer.innerHTML = `
         <li><a href="">HOME</a></li>
         <li><a href="">ABOUT</a></li>
         <li><a href=""> CONTACT</a></li>
-       
     </ul>
     <ul class="online-store">
         <li>
@@ -197,3 +182,4 @@ footer.innerHTML = `
         <li><a href="">LA - 902722</a></li>
         <li><a href="">UNITED STATES</a></li>
     </ul>`
+

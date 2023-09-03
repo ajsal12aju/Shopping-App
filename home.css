@@ -309,3 +309,14 @@ footer ul li h3 {
 
     margin-top: 25px;
 }
+
+@media only screen and (max-width: 800px) {
+    footer {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+    .online-store{
+        width: 50%;
+    }
+}
